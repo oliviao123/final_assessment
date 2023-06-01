@@ -45,9 +45,8 @@ In the code above the useState hook is used to set the state of a variable insid
 1.	Can you provide a brief summary on what is happening on line 34, 39?
 In lines 34-39 of  the code , we have a functional component called classInfo. Inside this component, there is a state variable called studentsCount, which is initially set to 0 using the useState hook. This variable will keep track of the number of students present in the class.
 
-The component returns a JSX element, which is a <div> container. Inside this container, there is a <p> tag that displays the current value of studentsCount using string interpolation. This allows the value to be updated and shown on the screen.
-
-Below the <p> element, there is a <button> tag labeled "Add Student" with an onClick event handler. Currently, the event handler is empty and marked as ????, which indicates that it needs to be filled with a function. This function will be called when the button is clicked and will perform the desired action, such as updating the studentsCount state or executing some additional logic.
+The component returns a JSX element, which is a <div> container. Inside this container, there is a <p> tag that displays the current value of studentsCount using string interpolation. This allows the value to be updated and shown on the screen. Below the <p> element, there is a <button> tag labeled "Add Student" with an onClick event handler. Currently, the event handler is empty and marked as ????, which indicates that it needs to be filled with a function. This function will be called when the button is clicked and will perform the desired action, such as updating the studentsCount state or executing some additional logic.
+ 
 2.	When a user clicks on the “Add student” button update the state (studentsCount) to include only the total number of students who are present. Using the data provided below:
  
 Figure 3
@@ -78,10 +77,12 @@ const classInfo = () => {
   
 
 b.	How do you ensure that the function is triggered when the button is clicked?
+ 
 To make sure the function gets triggered when I click the button, I assign the function as an event handler to the onClick attribute of the button element. I use the handleAddStudent function as the event handler for the onClick attribute of the button element. When I click the button, the handleAddStudent function gets called, which makes the logic inside it run. This logic increments the studentsCount state by 1 using setStudentsCount(studentsCount + 1).
 
 
 c.	How will you update the state with the result of your function?
+ 
 To update the state with the result of my function, I use the setStudentsCount function provided by the useState hook. Inside my handleAddStudent function, I filter the students array to find only the students who are present. I count the number of present students by checking if student.present is true. This count is stored in the presentStudents array.
 
 To update the state, I call setStudentsCount(presentStudents.length). This sets the value of the state variable studentsCount to the number of present students. By calling setStudentsCount with the new value, the state variable studentsCount gets updated. As a result, the component is re-rendered, and I can see the updated state value.
@@ -93,6 +94,7 @@ By using setStudentsCount with the count of present students, I update the state
 Now let’s use dispatch to update the state on button click
  
 1.	A change of code was made on line 174 (figure 4), can you briefly explain what that would do?
+ 
 The change of code on line 174, value: state.value + action.payload, will update the value property of the state by adding the value of action.payload to the current value.
 For example, if the current state is { value: 5 } and the action being dispatched has a payload value of 2, the code change on line 174 will result in the updated state being { value: 7 }.
 So, the change on line 174 performs an increment operation on the value property of the state by adding the value from action.payload to the existing state.value.
