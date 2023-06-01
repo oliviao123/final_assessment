@@ -1,3 +1,4 @@
+<!-- // Adding this comment to enable pull request feature -->
 ##Part 1 (5 marks):
  
 1.	Can you provide a brief summary of what is happening in this function code?
