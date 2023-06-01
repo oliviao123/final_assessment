@@ -87,19 +87,18 @@ To update the state with the result of my function, I use the setStudentsCount f
 To update the state, I call setStudentsCount(presentStudents.length). This sets the value of the state variable studentsCount to the number of present students. By calling setStudentsCount with the new value, the state variable studentsCount gets updated. As a result, the component is re-rendered, and I can see the updated state value.
 
 By using setStudentsCount with the count of present students, I update the state to reflect the result of my function. This triggers a re-render of the component with the updated state value displayed. 
-Part 3 (10 marks):
+ 
+#Part 3 (10 marks):
  
 Now let’s use dispatch to update the state on button click
  
-Figure 4
 1.	A change of code was made on line 174 (figure 4), can you briefly explain what that would do?
 The change of code on line 174, value: state.value + action.payload, will update the value property of the state by adding the value of action.payload to the current value.
-
 For example, if the current state is { value: 5 } and the action being dispatched has a payload value of 2, the code change on line 174 will result in the updated state being { value: 7 }.
-
 So, the change on line 174 performs an increment operation on the value property of the state by adding the value from action.payload to the existing state.value.
 
 2.	Let’s say we don’t want to set the state locally anymore and want to use dispatch. How would you ensure that an “increment” action that also contains the result of the studentCount is dispatched on button click? According to your answer in part 2.2b what would need to be changed?
+ 
 To ensure that we are no longer setting the state locally and implementing useDispatch, the following changes would need to be made. First, the useDispatch function from React-Redux should be imported. Then, the useState hook for studentsCount and the setStudentsCount function should be removed. Next, a handleAddStudent function should be created, which calculates the studentCount based on the present students in the students array. Inside this function, an action object should be defined with the type set as 'increment' and the studentCount as the payload. The useDispatch hook should be utilized to obtain the dispatch function. The action should be dispatched within the handleAddStudent function using the dispatch function. Finally, the handleAddStudent function should be assigned as the event handler for the onClick attribute of the button element
 
 An Example of how the code would look:
@@ -142,7 +141,6 @@ An Example of how the code would look:
 3.	Which code do you think is best suited to ensure that the “increment” action updates the state with the correct total number of students who are present. Is it Figure 4? Or
 Figure 5? Explain the code difference and your reasoning
  
-Figure 5
 Based on our desired goal, I feel the code in Figure 4 is better suited to ensure that the increment action updates the state with the correct total number of students who are present.
 
 This is because the code inside the increment condition of the reducer adds the value of action.payload to the existing state.value. This ensures that the state is updated by incrementing the value correctly based on the payload value.
