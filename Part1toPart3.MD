@@ -1,4 +1,4 @@
-Part 1 (5 marks):
+##Part 1 (5 marks):
  
 1.	Can you provide a brief summary of what is happening in this function code?
 In this function code, a reducer named countReducer is defined. It takes two parameters: state and action. The reducer is responsible for updating the state based on the action type. The state parameter is assigned a default value of initialState, which represents the initial state of the application.
@@ -37,7 +37,7 @@ function countReducer(state = initialState, action) {
   }
 
  
-Part 2 (10 marks):
+##Part 2 (10 marks):
  
 This section involves handling state locally.
  
@@ -49,7 +49,6 @@ The component returns a JSX element, which is a <div> container. Inside this con
  
 2.	When a user clicks on the “Add student” button update the state (studentsCount) to include only the total number of students who are present. Using the data provided below:
  
-Figure 3
 a.	Write a pseudocode of how your function would look.
 const classInfo = () => {
     const [studentsCount, setStudentsCount] = useState(0);
@@ -89,7 +88,7 @@ To update the state, I call setStudentsCount(presentStudents.length). This sets 
 
 By using setStudentsCount with the count of present students, I update the state to reflect the result of my function. This triggers a re-render of the component with the updated state value displayed. 
  
-#Part 3 (10 marks):
+##Part 3 (10 marks):
  
 Now let’s use dispatch to update the state on button click
  
@@ -141,7 +140,7 @@ An Example of how the code would look:
   
 
 3.	Which code do you think is best suited to ensure that the “increment” action updates the state with the correct total number of students who are present. Is it Figure 4? Or
-Figure 5? Explain the code difference and your reasoning
+Figure 5? Explain the code difference and your reasoning-
  
 Based on our desired goal, I feel the code in Figure 4 is better suited to ensure that the increment action updates the state with the correct total number of students who are present.
 
